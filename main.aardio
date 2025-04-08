@@ -1,0 +1,50 @@
+//web.view( WebView2 浏览器控件) - 入门
+import win.ui;
+import win.ui.menu;
+
+/*DSG{{*/
+var winform = win.form(text="love that lasts forever";right=800;bottom=469;bgcolor=16777215)
+winform.add()
+/*}}*/
+
+/*
+网页开发文档教程
+https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/html
+https://learnxinyminutes.com/docs/zh-cn/javascript-cn
+https://learnxinyminutes.com/docs/zh-cn/html-cn
+https://learnxinyminutes.com/docs/zh-cn/css-cn
+https://quickref.me/javascript
+https://quickref.me/es6 https://babeljs.io/docs/en/learn/#ecmascript-2015-features
+https://quickref.me/css
+
+web.view 入门教程：
+https://mp.weixin.qq.com/s/iYXPJgagXax9VgiIYaRfRw
+*/
+if(!_WIN10_LATER) import web.view.7; //兼容 Win7 以及之后版本，不支持新版 WebView2 的功能。 
+else import web.view;//支持 Win10 以及之后版本，导入这个就别导入前面的 web.view.7;  
+
+/*
+参数 @1 指定嵌入窗口（可以是 winform 或 static,custom 等控件对象）。
+可选用参数 @2 指定浏览器用户数据目录，可选用参数 @3 指定浏览器启动参数。
+*/
+var wb = web.view(winform);
+wb.enableDefaultContextMenus(false);
+wb.enableDevTools(true);
+wb.go("https://www.laoshuishushu.site/")
+
+/*var menu = win.ui.menu(winform);
+menu.add(
+	"清理缓存",
+	function(id){
+		var res = winform.msgboxTest("清理缓存将会推出登录，你确定要继续吗？")
+		if (!res) {
+			return
+		}
+		wb.eval('localStorage.clear()');
+		wb.cdp('Page.reload', {ignoreCache=true});
+	} 
+) 
+*/
+winform.show();
+winform.hitMax();
+win.loopMessage();

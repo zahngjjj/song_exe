@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project ver="10" name="song" libEmbed="true" icon="lib\images\favicon.ico" ui="win" output="view.exe" CompanyName="aardio" FileDescription="view" LegalCopyright="Copyright (C) 作者 2025" ProductName="view" InternalName="view" FileVersion="0.0.0.20" ProductVersion="0.0.0.20" publishDir="/dist/" dstrip="false" local="false" ignored="false">
+	<file name="main" path="main.aardio"/>
+	<folder name="窗体" path="forms" comment="" embed="true" local="false" ignored="false"/>
+</project>
